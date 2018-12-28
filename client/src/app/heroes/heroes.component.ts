@@ -4,8 +4,8 @@ import * as app from "tns-core-modules/application";
 
 @Component({
   selector: "Heroes",
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css'],
+  templateUrl: "./heroes.component.html",
+  styleUrls: ["./heroes.component.scss"],
   moduleId: module.id
 })
 export class HeroesComponent implements OnInit {
