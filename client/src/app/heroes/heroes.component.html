@@ -15,13 +15,17 @@
     <Label class="action-bar-title" text="Heroes"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content">
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-        <li *ngFor="let hero of heroes;trackBy:trackByHeroID">
-            <a routerLink="/detail/{{hero.id}}">
-                <span class="badge">{{hero.id}}</span> {{hero.name}}
-            </a>
-        </li>
-    </ul>
+<GridLayout>
+    <ListView [items]="heroItems" class="list-group">
+        <ng-template let-hero="item" let-i="index" let-odd="odd" let-even="even">
+            <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+            <StackLayout orientation="horizontal" class="list-group-item">
+                <Label text="Hero: " textWrap="true"></Label>
+                <Label [text]="hero.superHero.name"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
 </GridLayout>
+
+
+

@@ -4,11 +4,13 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nativescript-ui-sidedrawer";
 import { filter } from "rxjs/operators";
 import * as app from "tns-core-modules/application";
+import { HeroService } from "~/app/heroes/hero.service";
 
 @Component({
     moduleId: module.id,
     selector: "ns-app",
-    templateUrl: "app.component.html"
+    templateUrl: "app.component.html",
+    providers: [HeroService]
 })
 export class AppComponent implements OnInit {
     private _activatedUrl: string;
