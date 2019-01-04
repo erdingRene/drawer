@@ -8,17 +8,26 @@ import { HEROES } from "./mock-heroes";
 
 @Injectable()
 export class HeroService {
+  baseUrl: string = "http://10.0.2.2:3000";
 
   constructor(private messageService: MessageService,
               private http: HttpClient) { }
 
-  getHeroes(): Observable<any> {
-    return this.http.get<any>("http://localhost:3000/api/heroes")
-      .pipe(catchError((err) => of(`Error: ${err}`)));
+  getHeroes() {
+    // this.get_products();
+
+    return this.http.get<any>(this.baseUrl + "/api/heroes");
+  }
+
+  get_products() {
+    this.http.get(this.baseUrl + "/api/heroes").subscribe((res) => {
+      console.log(res);
+    });
   }
 
   getHero(id: number): IHero {
     this.messageService.add(`HeroService: fetched hero id=${id}`);
+
     return HEROES.find((hero) => hero.id === id);
   }
 

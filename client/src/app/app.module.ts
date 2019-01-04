@@ -2,6 +2,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptFormsModule } from "nativescript-angular";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { AppRoutingModule } from "~/app/app-routing.module";
@@ -17,6 +18,7 @@ import { AppComponent } from "./app.component";
         NativeScriptModule,
         NativeScriptFormsModule,
         NativeScriptHttpModule,
+        NativeScriptHttpClientModule,
         AppRoutingModule,
         NativeScriptUISideDrawerModule,
         HttpClientModule
